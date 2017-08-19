@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 	public static GameManager instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 	private BoardManager boardScript;                       //Store a reference to our BoardManager which will set up the level.
 	private int level = 3;                                  //Current level number, expressed in game as "Day 1".
+    public int HP = 10;
+    [HideInInspector]public int turn = 0;
 	#endregion
 
 	#region Methods
@@ -49,6 +51,11 @@ public class GameManager : MonoBehaviour
     {
 		
 	}
+
+    public void GameOver()
+    {
+        enabled = false;
+    }
 
 	// Update is called once per frame
 	void Update()
